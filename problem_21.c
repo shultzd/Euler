@@ -32,20 +32,26 @@ long d(long num)
 int main()
 {
 	long d_ans[MAX_NUM] = {0};
-	long i;
-	long sum;
+	long i, a, b;
+	long sum = 0;
 
+	/* prepare the data structure */
 	for(i=1; i<MAX_NUM; i++)
 		d_ans[i] = d(i);
 
 	/* Calculate the sum */
-	sum = 0;
-	for(i=1; i<MAX_NUM; i++)
-		if(i < MAX_NUM)
-			if(d_ans[i] < MAX_NUM)
-				if(d_ans[i] == d_ans[i] && d_ans[d_ans[i]] == i)
-					if(i != d_ans[i])
-						sum += i;
+	for(a=1; a<MAX_NUM; a++)
+	{
+		b = d_ans[a];
+		if(b > 0 && b < MAX_NUM && a != b)
+		{
+			if(d_ans[a] == b && d_ans[b] == a)
+			{
+				sum += a + b;
+				d_ans[b] = 0;
+			}
+		}
+	}
 
 	printf("The sum of all the amicable numbers under 10000 is %ld\n", sum);
 
