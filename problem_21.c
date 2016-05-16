@@ -23,8 +23,12 @@ long d(long num)
 	long sum = 0;
 
 	for (i=1; i<(num/2+1); i++)
+	{
 		if(num%i == 0)
+		{
 			sum += i;
+		}
+	}
 
 	return sum;
 }
@@ -37,7 +41,9 @@ int main()
 
 	/* prepare the data structure */
 	for(i=1; i<MAX_NUM; i++)
+	{
 		d_ans[i] = d(i);
+	}
 
 	/* Calculate the sum */
 	for(a=1; a<MAX_NUM; a++)
