@@ -20,11 +20,12 @@ SUNDAY = 0
 TUESDAY = 2
 DAYS_IN_WEEK = 7
 FEB = 1
+FIRST_YEAR = 1901
+LAST_YEAR = 2000
 
 # counts the sundays
 ans_count = 0
 
-# counts monthes (year is 1900 + (month_count % 12))
 month_count = 0
 
 #########################################################
@@ -33,7 +34,7 @@ def get_month():
 
 #########################################################
 def get_year():
-    return 1901 + (month_count / 12)
+    return FIRST_YEAR + (month_count / 12)
 
 # check if a given year is a "leap year"
 # if so, Feb will have one more day in it.
@@ -70,7 +71,7 @@ def euler_problem_19():
 
     # initial data
     today = TUESDAY # Jan 1st, 1901    
-    while(get_year() < 2001):
+    while(get_year() <= LAST_YEAR):
         print("checking date: %d/%d/%d" % (1, get_month(), get_year()))
         
         if(today == SUNDAY):
