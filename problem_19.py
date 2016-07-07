@@ -36,8 +36,6 @@ def get_month():
 def get_year():
     return FIRST_YEAR + (month_count / 12)
 
-# check if a given year is a "leap year"
-# if so, Feb will have one more day in it.
 #########################################################
 def is_leap_year():
     year = get_year()
