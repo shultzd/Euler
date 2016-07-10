@@ -81,6 +81,5 @@ def euler_problem_19():
         month_count += 1
       
     print("ans: %d" %(ans_count))
-    return    
 
 euler_problem_19();
